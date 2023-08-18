@@ -36,7 +36,9 @@ app.post('/makeProxy', (req, res)=>{
                 res.writeHead(200);
                 res.end(JSON.stringify(response.data, null, 3));
         });
-    } catch {}
+    } catch (error){
+        console.log(error)
+    }
     
 })
 
