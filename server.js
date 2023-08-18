@@ -18,7 +18,7 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
 */
 
 app.listen(3000, ()=>{
-    console.log("Sever is now listening at port 3000");
+    console.log(`Sever is now listening at ${window.location.host} - ${window.location.protocol}  port 3000`);
 });
 
 //utils for restfull api of type post
