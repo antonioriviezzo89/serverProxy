@@ -29,6 +29,7 @@ app.post('/makeProxy', (req, res)=>{
     try {
         const reqValues = req.body;
         let urlToBeProxy = reqValues.urlData;
+        console.log("called by client")
         axios.get(urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
