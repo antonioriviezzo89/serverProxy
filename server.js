@@ -17,7 +17,7 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
     url += `&action=changeTable&params={"type":"competition_wide_table"}`;   
 */
 
-app.listen(()=>{
+app.listen(443, ()=>{
     console.log(`Sever is now listening`);
 });
 
