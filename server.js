@@ -18,7 +18,7 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
 */
 
 app.listen(80, ()=>{
-    console.log(`Sever is now listening at port 3000`);
+    console.log(`Sever is now listening`);
 });
 
 //utils for restfull api of type post
@@ -29,7 +29,7 @@ app.post('/makeProxy', (req, res)=>{
     try {
         const reqValues = req.body;
         let urlToBeProxy = reqValues.urlData;
-        console.log("called by client")
+        console.log("called by client");
         axios.get(urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
