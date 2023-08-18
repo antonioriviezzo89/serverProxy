@@ -17,7 +17,7 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
     url += `&action=changeTable&params={"type":"competition_wide_table"}`;   
 */
 
-app.listen(443, ()=>{
+app.listen(3000, ()=>{
     console.log(`Sever is now listening`);
 });
 
@@ -28,8 +28,7 @@ app.use(bodyParser.json());
 app.post('/makeProxy', (req, res)=>{
     try {
         const reqValues = req.body;
-        let urlToBeProxy = reqValues.urlData;
-        console.log("called by client");
+        let urlToBeProxy = reqValues.urlData; 
         axios.get(urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
