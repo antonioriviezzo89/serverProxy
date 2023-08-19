@@ -16,9 +16,9 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
     url += `&callback_params={"season_id":"23480", "round_id":"76333", "outgroup":"", "competition_id":"70", "new_design_callback":"1"}`
     url += `&action=changeTable&params={"type":"competition_wide_table"}`;   
 */
-
-app.listen(process.env.PORT || 3000, ()=>{
-    console.log(`Sever is now listening`);
+var porta = process.env.PORT || 3000;
+app.listen(porta, ()=>{
+    console.log(`Sever is now listening ${porta}`);
 });
 
 //utils for restfull api of type post
