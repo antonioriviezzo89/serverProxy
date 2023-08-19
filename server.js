@@ -18,6 +18,7 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
 */
 var porta = process.env.PORT || 3000;
 var porta = 443;
+console.log("porta: " + porta);
 app.listen(porta, ()=>{
     console.log(`Sever is now listening ${porta}`);
 });
