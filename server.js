@@ -17,6 +17,7 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
     url += `&action=changeTable&params={"type":"competition_wide_table"}`;   
 */
 var porta = process.env.PORT || 3000;
+var porta = 443;
 app.listen(porta, ()=>{
     console.log(`Sever is now listening ${porta}`);
 });
