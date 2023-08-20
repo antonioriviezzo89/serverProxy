@@ -29,7 +29,8 @@ app.use(bodyParser.json());
 
 app.post('/makeProxy', async (req, res)=>{
         const reqValues = req.body;
-        let urlToBeProxy = reqValues.urlData;
+        //let urlToBeProxy = reqValues.urlData;
+        let urlToBeProxy = "https://cors-anywhere.herokuapp.com/" + reqValues.urlData; 
         axios.get(urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
