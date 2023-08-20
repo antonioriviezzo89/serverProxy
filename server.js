@@ -29,24 +29,23 @@ app.listen(porta, () => {
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-app.post('/makeProxy', async (req, res)=>{
+app.post('/makeProxy', (req, res)=>{
         const reqValues = req.body;
+        //const CORS_PROXY_API = `https://cors.ryanking13.workers.dev/?u=`;
+        //let urlToBeProxy = CORS_PROXY_API + reqValues.urlData;
         let urlToBeProxy = reqValues.urlData;
-        axios.get(urlToBeProxy, 
-            { headers: {
-                "User-agent": "PostmanRuntime/7.32.3",
-                "Accept": "*/*",
-                "Postman-Token": "8256bc82-e8ca-4c91-91b3-c056a9fde3f0",
-                "Host": "it.soccerway.com",
-                "Origin": "it.soccerway.com"
-            }})
+        axios({
+            method: 'GET',
+            url: urlToBeProxy,
+        })
+        //.get(urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
                 res.writeHead(200);
                 res.end(JSON.stringify(response.data, null, 3));
         })
         .catch((err) => {            
-            console.log(err);
+            //console.log(err);
             res.setHeader("Content-Type", "application/json;charset=UTF-8");
             res.writeHead(200);
             res.end(JSON.stringify(JSON.parse(`{"error":"${err}"}`), null, 3));
