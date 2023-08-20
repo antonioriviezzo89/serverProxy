@@ -30,13 +30,14 @@ app.use(morgan("dev"));
 app.use("/proxyData",
     createProxyMiddleware({
         target: url,
-        secure: false,
+        secure: true,
         changeOrigin: true,
         pathRewrite: {
             "^/proxyData": "",
         },
     })
 );
+
 app.listen(porta, ()=>{
     console.log(`Sever is now listening ${porta}`);
 });
