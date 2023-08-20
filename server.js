@@ -37,7 +37,7 @@ app.post('/makeProxy', (req, res)=>{
         axios({
             method: 'GET',
             url: urlToBeProxy,
-            withCredentials: true,
+            withCredentials: false,
             crossdomain: true,
             headers: { 
                 "Cache-Control": "no-cache",
