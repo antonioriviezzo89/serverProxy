@@ -29,7 +29,7 @@ app.use(morgan("dev"));
 
 app.use("/proxyData",
     createProxyMiddleware({
-        target: url,
+        target: "https://it.soccerway.com",
         secure: true,
         changeOrigin: true,
         pathRewrite: {
@@ -51,7 +51,7 @@ app.post('/makeProxy', (req, res)=>{
     try {
         const reqValues = req.body;
         let urlToBeProxy = reqValues.urlData; 
-        axios.get(urlToBeProxy)
+        axios.get("/proxyData/" + urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
                 res.writeHead(200);
