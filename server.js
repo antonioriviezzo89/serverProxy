@@ -38,14 +38,7 @@ app.post('/makeProxy', async (req, res)=>{
                 "Accept": "*/*",
                 "Postman-Token": "8256bc82-e8ca-4c91-91b3-c056a9fde3f0",
                 "Host": "it.soccerway.com",
-                "Accept-Encoding": "gzip, deflate, br",
-                "Connection": "keep-alive",
-                "Sec-Fetch-Dest": "document",
-                "Sec-Fetch-Mode": "navigate",
-                "Sec-Fetch-Site": "none",
-                "Sec-Fetch-User": "?1",
-                "Upgrade-Insecure-Requests": "1",
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0",
+                "Origin": "it.soccerway.com"
             }})
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
