@@ -25,10 +25,10 @@ console.log("porta: " + porta);
 
 app.use(morgan("dev"));
 
-app.get("/proxyData/*",
+app.use("/proxyData/*",
     createProxyMiddleware({
-        target: url,//"https://it.soccerway.com",
-        secure: true,
+        target: "https://it.soccerway.com",
+        //secure: true,
         changeOrigin: true,
         pathRewrite: {
             "^/proxyData": "",
@@ -45,10 +45,10 @@ app.listen(porta, () => {
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-app.post('/makeProxy', (req, res)=>{
+app.post('/makeProxy', async (req, res)=>{
     try {
         const reqValues = req.body;
-        let urlToBeProxy = reqValues.urlData; 
+        let urlToBeProxy = reqValues.urlData;
         axios.get(urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
