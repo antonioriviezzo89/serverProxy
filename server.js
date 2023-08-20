@@ -14,7 +14,7 @@ app.use(cors());
 
 
 //example url
-var url = `https://it.soccerway.com/a/block_competition_tables?`
+var url = `104.106.112.96:443/a/block_competition_tables?`
     url += `block_id=page_competition_1_block_competition_tables_11`
     url += `&callback_params={"season_id":"23480", "round_id":"76333", "outgroup":"", "competition_id":"70", "new_design_callback":"1"}`
     url += `&action=changeTable&params={"type":"competition_wide_table"}`;   
