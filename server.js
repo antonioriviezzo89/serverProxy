@@ -25,9 +25,7 @@ console.log("porta: " + porta);
 
 app.use(morgan("dev"));
 
-
-
-app.use("/proxyData",
+app.use("/proxyData/*",
     createProxyMiddleware({
         target: "https://it.soccerway.com",
         secure: true,
@@ -38,7 +36,7 @@ app.use("/proxyData",
     })
 );
 
-app.listen(porta, ()=>{
+app.listen(porta, () => {
     console.log(`Sever is now listening ${porta}`);
 });
 
@@ -51,7 +49,7 @@ app.post('/makeProxy', (req, res)=>{
     try {
         const reqValues = req.body;
         let urlToBeProxy = reqValues.urlData; 
-        axios.get("/proxyData/" + urlToBeProxy)
+        axios.get(urlToBeProxy)
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
                 res.writeHead(200);
