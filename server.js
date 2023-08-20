@@ -7,11 +7,13 @@ const app = express();
 
 app.use(cors());
 
+/*
 //example url
 var url = `https://it.soccerway.com/a/block_competition_tables?`
     url += `block_id=page_competition_1_block_competition_tables_11`
     url += `&callback_params={"season_id":"23480", "round_id":"76333", "outgroup":"", "competition_id":"70", "new_design_callback":"1"}`
     url += `&action=changeTable&params={"type":"competition_wide_table"}`;   
+*/
 
 var porta = process.env.PORT || 3000;
 //porta = 443;
@@ -37,7 +39,13 @@ app.post('/makeProxy', async (req, res)=>{
                 "Postman-Token": "8256bc82-e8ca-4c91-91b3-c056a9fde3f0",
                 "Host": "it.soccerway.com",
                 "Accept-Encoding": "gzip, deflate, br",
-                "Connection": "keep-alive"
+                "Connection": "keep-alive",
+                "Sec-Fetch-Dest": "document",
+                "Sec-Fetch-Mode": "navigate",
+                "Sec-Fetch-Site": "none",
+                "Sec-Fetch-User": "?1",
+                "Upgrade-Insecure-Requests": "1",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/116.0",
             }})
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
