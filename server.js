@@ -37,6 +37,7 @@ app.post('/makeProxy', (req, res)=>{
         axios({
             method: 'GET',
             url: urlToBeProxy,
+            withCredentials: true,
         })
         //.get(urlToBeProxy)
             .then(function (response) {
