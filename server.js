@@ -28,7 +28,6 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 app.post('/makeProxy', async (req, res)=>{
-    try {
         const reqValues = req.body;
         let urlToBeProxy = reqValues.urlData;
         axios.get(urlToBeProxy)
@@ -36,10 +35,8 @@ app.post('/makeProxy', async (req, res)=>{
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
                 res.writeHead(200);
                 res.end(JSON.stringify(response.data, null, 3));
-        });
-    } catch (error){
-        console.log(error);
-    }
+        })
+        .catch((err) => console.log(err));
     
 })
 
