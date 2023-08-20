@@ -40,7 +40,7 @@ app.post('/makeProxy', async (req, res)=>{
             console.log(err);
             res.setHeader("Content-Type", "application/json;charset=UTF-8");
             res.writeHead(200);
-            res.end(JSON.stringify(JSON.stringify(JSON.parse(`{"error":"${err}}"`)), null, 3));
+            res.end(JSON.stringify(JSON.parse(`{"error":"${err}"}`), null, 3));
         });
     
 })
