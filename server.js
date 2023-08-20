@@ -25,7 +25,7 @@ console.log("porta: " + porta);
 
 app.use(morgan("dev"));
 
-app.use("/proxyData/*",
+app.get("/proxyData/*",
     createProxyMiddleware({
         target: url,//"https://it.soccerway.com",
         secure: true,
