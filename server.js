@@ -29,9 +29,16 @@ app.use(bodyParser.json());
 
 app.post('/makeProxy', async (req, res)=>{
         const reqValues = req.body;
-        //let urlToBeProxy = reqValues.urlData;
-        let urlToBeProxy = "https://cors-anywhere.herokuapp.com/" + reqValues.urlData; 
-        axios.get(urlToBeProxy)
+        let urlToBeProxy = reqValues.urlData;
+        axios.get(urlToBeProxy, 
+            { headers: {
+                "User-agent": "PostmanRuntime/7.32.3",
+                "Accept": "*/*",
+                "Postman-Token": "8256bc82-e8ca-4c91-91b3-c056a9fde3f0",
+                "Host": "it.soccerway.com",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Connection": "keep-alive"
+            }})
             .then(function (response) {
                 res.setHeader("Content-Type", "application/json;charset=UTF-8");
                 res.writeHead(200);
