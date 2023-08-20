@@ -27,7 +27,7 @@ app.use(morgan("dev"));
 
 app.use("/proxyData/*",
     createProxyMiddleware({
-        target: "https://it.soccerway.com",
+        target: url,//"https://it.soccerway.com",
         secure: true,
         changeOrigin: true,
         pathRewrite: {
