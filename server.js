@@ -39,9 +39,9 @@ app.post('/makeProxy', (req, res)=>{
             url: urlToBeProxy,
             withCredentials: false,
             crossdomain: true,
-            headers: { 
-                "Cache-Control": "no-cache",
-                "Postman-Token": "42e6c291-9a09-c29f-f28f-11872e2490a5"
+            headers: {
+                "Accept": "*/*",  
+                "User-Agent": "Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148", 
               }
         })
         //.get(urlToBeProxy)
