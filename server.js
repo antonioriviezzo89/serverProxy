@@ -38,6 +38,11 @@ app.post('/makeProxy', (req, res)=>{
             method: 'GET',
             url: urlToBeProxy,
             withCredentials: true,
+            crossdomain: true,
+            headers: { 
+                "Cache-Control": "no-cache",
+                "Postman-Token": "42e6c291-9a09-c29f-f28f-11872e2490a5"
+              }
         })
         //.get(urlToBeProxy)
             .then(function (response) {
