@@ -2,16 +2,10 @@ var http = require('http');
 var axios = require('axios');
 
 const express = require('express');
-const morgan = require('morgan');
-const { createProxyMiddleware } = require('http-proxy-middleware');
-require('dotenv').config();
 const cors = require('cors');
 const app = express();
 
 app.use(cors());
-
-//rivaserver.c1.is
-
 
 //example url
 var url = `https://it.soccerway.com/a/block_competition_tables?`
@@ -23,18 +17,6 @@ var porta = process.env.PORT || 3000;
 //porta = 443;
 console.log("porta: " + porta);
 
-app.use(morgan("dev"));
-
-app.use("/proxyData/*",
-    createProxyMiddleware({
-        target: "https://it.soccerway.com",
-        //secure: true,
-        changeOrigin: true,
-        pathRewrite: {
-            "^/proxyData": "",
-        },
-    })
-);
 
 app.listen(porta, () => {
     console.log(`Sever is now listening ${porta}`);
