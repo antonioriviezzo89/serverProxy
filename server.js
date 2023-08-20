@@ -20,7 +20,7 @@ var url = `https://it.soccerway.com/a/block_competition_tables?`
     url += `&action=changeTable&params={"type":"competition_wide_table"}`;   
 
 var porta = process.env.PORT || 3000;
-porta = 443;
+//porta = 443;
 console.log("porta: " + porta);
 
 app.use(morgan("dev"));
